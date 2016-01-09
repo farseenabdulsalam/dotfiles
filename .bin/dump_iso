@@ -1,0 +1,6 @@
+
+device=$1
+iso=$2
+bsin=8M
+bsout=8M
+dd if=$device bs=$bsin|pv -prbas `blockdev --getsize64 $device`|dd of=$iso bs=$bsout
