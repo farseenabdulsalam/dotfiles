@@ -10,6 +10,10 @@
 !.zshrc
 !.zshenv
 
+!.profile
+!.zprofile
+!.bash_profile
+
 !.bin
 !.bin/*
 
