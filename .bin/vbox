@@ -1,5 +1,5 @@
 #!/bin/bash
-
+mount /mnt/data
 modprobe -nv vboxdrv|grep -q insmod
 if [ $? -eq 0 ]; then
   gk_sudo modprobe vboxdrv

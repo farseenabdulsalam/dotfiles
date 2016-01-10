@@ -1,0 +1,3 @@
+#!/bin/sh
+#${SHELL:-"/bin/sh"}
+termite -e "${SHELL:-\"/bin/sh\"} -c `dmenu_path | dmenu \"$@\"`" &
