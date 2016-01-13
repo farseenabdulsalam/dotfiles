@@ -3,5 +3,5 @@
 if [ -t 0 ]; then
   echo $@;
 else
-  echo "OK"|dmenu -p "$@"
+  echo "OK"|dmenu -fn "Droid Sans Mono-8" -p "$@"
 fi

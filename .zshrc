@@ -85,3 +85,4 @@ source $ZSH/oh-my-zsh.sh
 #export TERM=xterm-256color
 eval $(dircolors ~/.dircolors)
 # export PATH=$PATH:~/.bin/
+# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
