@@ -199,7 +199,7 @@ exec --no-startup-id blueman-applet
 
 for_window [class="MPlayer"] floating enable
 for_window [class="Gloobus-preview"] floating enable, border none
-for_window [class="Firefox"] border none
+for_window [title="Firefox"] border none
 for_window [class="GVim"] border none
 for_window [window_role="conversation"] floating enable, border normal
 for_window [window_role="Msgcompose"] floating enable, border normal
