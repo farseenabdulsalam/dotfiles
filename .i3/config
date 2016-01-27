@@ -44,6 +44,7 @@ bindsym $mod+d exec dmenu_run -fn "Droid Sans Mono-8"
 bindsym $mod+m exec my_dmenu -fn "Droid-8"
 bindsym $mod+Ctrl+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+n exec dmenu_network
+bindsym $mod+Shift+n exec --no-startup-id tomboy --search
 
 # change focus
 bindsym $mod+h focus left
