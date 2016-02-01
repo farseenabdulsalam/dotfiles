@@ -35,15 +35,15 @@ bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
-bindsym $mod+Shift+d exec SUDO_ASKPASS=~/.bin/dmenu_askpass sudo -A dmenu_run -fn "Droid Sans Mono-8" -nb \#441505
+bindsym $mod+Shift+d exec --no-startup-id SUDO_ASKPASS=~/.bin/dmenu_askpass sudo -A dmenu_run -fn "Droid Sans Mono-8" -nb \#441505
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+d exec dmenu_run -fn "Droid Sans Mono-8"
-bindsym $mod+m exec my_dmenu -fn "Droid-8"
-bindsym $mod+Ctrl+d exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+n exec dmenu_network
+bindsym $mod+Ctrl+d exec --no-startup-id dmenu_run -fn "Droid Sans Mono-8"
+bindsym $mod+m exec --no-startup-id my_dmenu -fn "Droid-8"
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu=\"dmenu -i -fn 'Droid Sans Mono-8'\"
+bindsym $mod+n exec --no-startup-id dmenu_network
 bindsym $mod+Shift+n exec --no-startup-id tomboy --search
 
 # change focus
@@ -109,13 +109,13 @@ bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number 1 Code_1; workspace number 1 Code_1
-bindsym $mod+Shift+2 move container to workspace number 2 Code_2; workspace number 2 Code_2
-bindsym $mod+Shift+3 move container to workspace number 3 Code_3; workspace number 3 Code_3
-bindsym $mod+Shift+4 move container to workspace number 4 Web_1; workspace number 4 Web_1
-bindsym $mod+Shift+5 move container to workspace number 5 Web_2; workspace number 5 Web_2
-bindsym $mod+Shift+6 move container to workspace number 6 HexChat; workspace number 6 HexChat
-bindsym $mod+Shift+7 move container to workspace number 7 Music; workspace number 7 Music
+bindsym $mod+Shift+1 move container to workspace 1; workspace 1
+bindsym $mod+Shift+2 move container to workspace 2; workspace 2
+bindsym $mod+Shift+3 move container to workspace 3; workspace 3
+bindsym $mod+Shift+4 move container to workspace 4; workspace 4
+bindsym $mod+Shift+5 move container to workspace 5; workspace 5
+bindsym $mod+Shift+6 move container to workspace 6; workspace 6
+bindsym $mod+Shift+7 move container to workspace 7; workspace 7
 bindsym $mod+Shift+8 move container to workspace 8; workspace 8
 bindsym $mod+Shift+9 move container to workspace 9; workspace 9
 bindsym $mod+Shift+0 move container to workspace 10; workspace 10
@@ -174,14 +174,14 @@ bar {
 bindsym Print exec scrot '/home/farzeen/Pictures/Screenshots/%Y-%m-%d_%r.png'
 
 bindsym $mod+shift+v exec gvim
-bindsym XF86MonBrightnessUp exec xbacklight +10
-bindsym XF86MonBrightnessDown exec xbacklight -10
-bindsym Shift+XF86MonBrightnessUp exec xbacklight +1
-bindsym Shift+XF86MonBrightnessDown exec xbacklight -1
-bindsym $mod+Escape exec xbacklight =10
-bindsym XF86AudioLowerVolume exec /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ '-5%'
-bindsym XF86AudioRaiseVolume exec /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ '+5%'
-bindsym XF86AudioMute exec /usr/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight +10
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -10
+bindsym Shift+XF86MonBrightnessUp exec --no-startup-id xbacklight +1
+bindsym Shift+XF86MonBrightnessDown exec --no-startup-id xbacklight -1
+bindsym $mod+Escape exec --no-startup-id xbacklight =10
+bindsym XF86AudioLowerVolume exec --no-startup-id /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ '-5%'
+bindsym XF86AudioRaiseVolume exec --no-startup-id /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ '+5%'
+bindsym XF86AudioMute exec --no-startup-id /usr/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 #bindsym XF86PowerOff exec gksudo poweroff
 bindsym Shift+XF86PowerOff exec gksudo pm-suspend
@@ -191,12 +191,12 @@ bindsym $mod+Shift+z move container to workspace back_and_forth;workspace back_a
 
 bindsym $mod+w exec firefox
 bindsym $mod+e exec pcmanfm
-bindsym $mod+Shift+m exec deadbeef
+bindsym $mod+Shift+m exec --no-startup-id deadbeef
 
 font pango: Roboto Sans 7
-exec --no-startup-id nm-applet
-exec --no-startup-id nitrogen --restore
-exec --no-startup-id blueman-applet
+exec nm-applet
+exec nitrogen --restore
+exec blueman-applet
 
 for_window [class="MPlayer"] floating enable
 for_window [class="Gloobus-preview"] floating enable, border none
