@@ -16,6 +16,8 @@
 
 !.bin
 !.bin/*
+!.bin/my_dmenu_files
+!.bin/my_dmenu_files/*
 
 !.dotfiles
 !.dotfiles/*

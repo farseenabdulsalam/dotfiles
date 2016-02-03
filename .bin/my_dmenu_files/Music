@@ -1,0 +1,36 @@
+#!/bin/bash
+DMENU="dmenu"
+DMENU_OPTS=($@)
+
+MUSIC_PLAYER="deadbeef"
+
+MUSIC_DIR=(~/Music/ ~/MyDownloaders/MidQMusic /mnt/gallery/MyDownloaders/MidQMusic /mnt/gallery/Music /mnt/gallery/Unsorted\ Music)
+
+if [ ! -d $MUSIC_DIR ]; then
+  $DMENU ${DMENU_OPTS[@]} -p "Directory cannot be accessed: $MUSIC_DIR" <&-
+  exit 1
+fi
+
+IFS=$'\n'
+MUSICS=( $(find "${MUSIC_DIR[@]}" -iname "*.mp3" -o -iname "*.opus") )
+
+if [ -z "$MUSICS" ]; then
+  $DMENU ${DMENU_OPTS[@]} -p "No musics found in: $MUSIC_DIR" <&-
+  exit 2
+fi
+
+TO_OPEN=$($DMENU ${DMENU_OPTS[@]} -i -p "Open music" -l 10 <<<"${MUSICS[*]}")
+
+echo $TO_OPEN 
+echo
+echo ${TO_OPEN[@]}
+if [ -z "${TO_OPEN[@]}" ]; then exit 4; fi
+
+  # for f in "${TO_OPEN[@]}"; do
+    # if [ ! -f "$f" ]; then
+      # $DMENU ${DMENU_OPTS[@]} -p "Cannot access: $f" <&-
+      # exit 3
+    # fi
+  # done;
+  # $MUSIC_PLAYER $MUSIC_DIR/$TO_OPEN &
+  $MUSIC_PLAYER ${TO_OPEN[@]} &

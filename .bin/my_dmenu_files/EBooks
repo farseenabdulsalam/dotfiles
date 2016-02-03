@@ -1,0 +1,32 @@
+#!/bin/bash
+
+DMENU="dmenu"
+DMENU_OPTS=($@)
+EBOOK_DIR="/mnt/gallery/Books/E-Books"
+
+if [ ! -d $EBOOK_DIR ]; then
+  $DMENU ${DMENU_OPTS[@]} -p "Directory cannot be accessed: $EBOOK_DIR" <&-
+  exit 1
+fi
+
+IFS=$'\n'
+
+PDFS=( $(find "$EBOOK_DIR" -iname "*.pdf") )
+
+if [ -z "$PDFS" ]; then
+  $DMENU ${DMENU_OPTS[@]} -p "No books found in: $EBOOK_DIR" <&-
+  exit 2
+fi
+
+PDFS_=("${PDFS[@]#$EBOOK_DIR}")
+
+TO_OPEN=$($DMENU ${DMENU_OPTS[@]} -i -p "Open book" -l 10 <<<"${PDFS_[*]}")
+
+if [ ! -z "$TO_OPEN" ]; then
+  if [ ! -f "$EBOOK_DIR/$TO_OPEN" ]; then
+    $DMENU ${DMENU_OPTS[@]} -p "Cannot access: $TO_OPEN" <&-
+    exit 3
+  fi
+  evince $EBOOK_DIR/$TO_OPEN &
+fi
+
