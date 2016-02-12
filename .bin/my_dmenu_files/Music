@@ -3,6 +3,8 @@ DMENU="dmenu"
 DMENU_OPTS=($@)
 
 MUSIC_PLAYER="deadbeef"
+MUSIC_PLAYER_OPTS="--queue"
+
 
 MUSIC_DIR=(~/Music/ ~/MyDownloaders/MidQMusic /mnt/gallery/MyDownloaders/MidQMusic /mnt/gallery/Music /mnt/gallery/Unsorted\ Music)
 
@@ -33,4 +35,4 @@ if [ -z "${TO_OPEN[@]}" ]; then exit 4; fi
     # fi
   # done;
   # $MUSIC_PLAYER $MUSIC_DIR/$TO_OPEN &
-  $MUSIC_PLAYER ${TO_OPEN[@]} &
+  $MUSIC_PLAYER $MUSIC_PLAYER_OPTS ${TO_OPEN[@]} &

@@ -8,7 +8,8 @@ arg="$1"
 if [ -z "$arg" ]; then arg="on"; fi
 case $arg in
   on|1|true)
-    echo "30">/sys/devices/system/cpu/intel_pstate/max_perf_pct
+    echo "10">/sys/devices/system/cpu/intel_pstate/max_perf_pct
+    echo "0">/sys/devices/system/cpu/intel_pstate/min_perf_pct
     dmenu_echo "Activated powersaving mode."
     ;;
   off|0|false)
