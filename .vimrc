@@ -200,10 +200,10 @@ call plug#end()
     nnoremap <silent> <Leader>bb :TagbarTogglePause<CR>
 
     " Disable Arrow keys in normal mode
-    nnoremap <Up> <NOP>
-    nnoremap <Down> <NOP>
-    nnoremap <Left> <NOP>
-    nnoremap <Right> <NOP>
+    " nnoremap <Up> <NOP>
+    " nnoremap <Down> <NOP>
+    " nnoremap <Left> <NOP>
+    " nnoremap <Right> <NOP>
     nnoremap <C-j> <PageDown>
     nnoremap <C-k> <PageUp>
     " Ctrl+hjkl -> movement in insert mode
