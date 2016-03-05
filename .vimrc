@@ -22,7 +22,7 @@ call plug#begin()
 
     Plug 'scrooloose/nerdtree'
     " Plug 'scrooloose/nerdcommenter'
-    Plug 'wikitopian/hardmode'
+    " Plug 'wikitopian/hardmode'
 
     Plug 'airblade/vim-rooter'
     Plug 'LucHermitte/lh-vim-lib'
@@ -44,7 +44,7 @@ call plug#begin()
     " Plug 'ervandew/supertab'
     Plug 'majutsushi/tagbar'
     Plug 'moll/vim-bbye'
-    Plug 'Valloric/YouCompleteMe'
+    " Plug 'Valloric/YouCompleteMe'
     " Plug 'scrooloose/syntastic'
     " Plug 'SirVer/ultisnips'
 call plug#end()

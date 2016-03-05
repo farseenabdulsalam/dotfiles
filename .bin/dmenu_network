@@ -10,7 +10,7 @@ until [ "$result" != "RETRY" ]; do
   connection=$(nmcli -t --field NAME con| eval $dmenu_complete)
   if [ $? -ne 0 ]; then exit 0; fi
 
-  message=$(nmcli con up id "$connection" 2>&1)
+  message=$(nmcli --ask con up id "$connection" 2>&1)
   if [ $? -ne 0 ]; then
     dmenu_complete="$dmenu_bin $dmenu_opts -i -p \"$message\""
     result=$(printf "OK\nRETRY" | eval $dmenu_complete)

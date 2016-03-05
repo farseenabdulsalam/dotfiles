@@ -97,13 +97,13 @@ bindsym $mod+a focus parent
 bindsym $mod+s focus child
 
 # switch to workspace
-bindsym $mod+1 workspace number 1 Code_1
-bindsym $mod+2 workspace number 2 Code_2
-bindsym $mod+3 workspace number 3 Code_3
-bindsym $mod+4 workspace number 4 Web_1
-bindsym $mod+5 workspace number 5 Web_2
-bindsym $mod+6 workspace number 6 HexChat
-bindsym $mod+7 workspace number 7 Music
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
@@ -197,7 +197,7 @@ font pango: Roboto Sans 7
 exec --no-startup-id nm-applet
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id blueman-applet
-exec --no-startup-id qjackctl
+# exec --no-startup-id qjackctl
 exec --no-startup-id mount_all
 
 for_window [class="qjackctl"] floating enable
