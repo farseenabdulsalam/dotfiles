@@ -27,8 +27,8 @@ set $mod Mod4
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite
-bindsym $mod+F1 exec termite
+bindsym $mod+Return exec gnome-terminal
+bindsym $mod+F1 exec gnome-terminal
 
 # kill focused window
 bindsym $mod+q kill
@@ -42,7 +42,8 @@ bindsym $mod+Shift+d exec --no-startup-id SUDO_ASKPASS=~/.bin/dmenu_askpass sudo
 # installed.
 bindsym $mod+Ctrl+d exec --no-startup-id dmenu_run -fn "Droid Sans Mono-8"
 bindsym $mod+m exec --no-startup-id my_dmenu -fn "Droid-8"
-bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu=\"dmenu -i -fn 'Droid Sans Mono-8'\"
+bindsym $mod+d exec --no-startup-id dmenu_extended_run
+bindsym $mod+b exec --no-startup-id j4-dmenu-desktop --dmenu=\"dmenu -i -fn 'Droid Sans Mono-8'\"
 bindsym $mod+n exec --no-startup-id dmenu_network
 bindsym $mod+Shift+n exec --no-startup-id tomboy --search
 
@@ -158,7 +159,7 @@ bindsym $mod+r mode "resize"
 bar {
   status_command ~/.conky/conky-i3bar
   font pango: Roboto Sans 7
-  position top
+  position bottom
   # Type             border  background font
   colors {
   focused_workspace  #008fff #007fff #ffffff
@@ -183,28 +184,33 @@ bindsym XF86AudioLowerVolume exec --no-startup-id /usr/bin/pactl set-sink-volume
 bindsym XF86AudioRaiseVolume exec --no-startup-id /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ '+5%'
 bindsym XF86AudioMute exec --no-startup-id /usr/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-#bindsym XF86PowerOff exec gksudo poweroff
+bindsym XF86PowerOff exec gksudo poweroff
 bindsym Shift+XF86PowerOff exec gksudo pm-suspend
 
 bindsym $mod+z workspace back_and_forth
 bindsym $mod+Shift+z move container to workspace back_and_forth;workspace back_and_forth
 
-bindsym $mod+w exec firefox
+bindsym $mod+w exec --no-startup-id firefox
 bindsym $mod+e exec pcmanfm
 bindsym $mod+Shift+m exec --no-startup-id deadbeef
 
 font pango: Roboto Sans 7
+exec --no-startup-id compton
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
-# exec --no-startup-id qjackctl
 exec --no-startup-id mount_all
+# exec --no-startup-id qjackctl
 exec --no-startup-id nitrogen --restore
 
 for_window [class="qjackctl"] floating enable
 for_window [class="MPlayer"] floating enable
 for_window [class="Gloobus-preview"] floating enable, border none
 for_window [title="Firefox"] border none
+for_window [title="Chromium"] border none
+for_window [class="Midori"] border none
 for_window [class="GVim"] border none
+for_window [class="Opera"] border none
 for_window [window_role="conversation"] floating disable, border normal
 for_window [window_role="Msgcompose"] floating disable, border normal
 for_window [window_role="smiley_dialog"] floating disable, border normal
+for_window [class="Anki"] floating enable

@@ -9,6 +9,7 @@ call plug#begin()
     Plug 'PotatoesMaster/i3-vim-syntax'
     Plug 'gioele/vim-autoswap'
     Plug 'tomtom/tcomment_vim'
+    Plug 'davidhalter/jedi-vim'
     " Plug 'tpope/vim-abolish'
 
     Plug 'tpope/vim-repeat'

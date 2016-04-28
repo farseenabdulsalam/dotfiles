@@ -5,7 +5,8 @@
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="nicoulaj"
+ZSH_THEME="robbyrussell"
+# ZSH_THEME="minimal"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -27,7 +28,7 @@ ZSH_THEME="nicoulaj"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
- ENABLE_CORRECTION="true"
+ ENABLE_CORRECTION="false"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 #  COMPLETION_WAITING_DOTS="true"
@@ -49,7 +50,21 @@ ZSH_THEME="nicoulaj"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(sudo git colored-man-pages cp colorize copydir copyfile pylint python z themes last-working-dir)
+
+# sudo: ESC-ESC -> sudo <command>
+# git: shortcuts
+# cp: cpv -> cp with progress
+# copydir: copy the path of cwd to clipboard
+# copyfile: same as above for a given file
+# fasd: jump around recent dirs and files with tab completion
+# fancy-ctrl-z: switch back and forth from Vim using ctrl+z
+# archlinux: pacman, yaourt shortcuts
+plugins=(sudo git colored-man-pages cp colorize copydir copyfile fasd fancy-ctrl-z archlinux)
+
+mkcd () {
+  mkdir "$1"
+  cd "$1"
+}
 
 # User configuration
 

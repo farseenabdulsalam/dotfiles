@@ -1,0 +1,2 @@
+#!/bin/bash
+ wget -q -O - "$1" |grep -E -o "http://[^ ]+.pdf" |wget -i - -nc -nv --show-progress

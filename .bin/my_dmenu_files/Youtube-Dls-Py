@@ -14,7 +14,7 @@ OPEN_CMD = "smplayer"
 #The list of folders to search for
 YTDL_DIRS = [
         "/home/farzeen/MyDownloaders",
-        "/mnt/gallery/MyDownloaders"
+        # "/mnt/gallery/MyDownloaders"
         ]
 
 def dmenu(prompt=None, extra_opts=None, input=None):

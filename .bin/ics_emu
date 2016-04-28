@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Run my Android ICS device on emulator
+/home/farzeen/programs/android-sdk-linux/tools/emulator @ICS_86 -no-boot-anim

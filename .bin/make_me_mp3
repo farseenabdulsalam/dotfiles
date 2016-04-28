@@ -1,0 +1,26 @@
+#!/bin/bash
+
+mkdir -p completed_source output
+
+function convert_all() {
+  for i in *.$1; do
+    if [ "$i" = "*.$1" ]; then break; fi
+    convert "$i"
+  done
+}
+
+function convert() {
+  i=$1
+  f="${i%%.opus}"
+  f="${f%%.m4a}"
+  f="${f%%.mp3}"
+  f="$f"_c.mp3
+  ffmpeg -i "$i" -acodec libmp3lame -compression_level 0 -q 7 "$f"
+  mv "$f" output/
+  mv "$i" completed_source/
+
+}
+
+convert_all opus
+convert_all m4a
+convert_all mp3
