@@ -190,7 +190,7 @@ bindsym Shift+XF86PowerOff exec gksudo pm-suspend
 bindsym $mod+z workspace back_and_forth
 bindsym $mod+Shift+z move container to workspace back_and_forth;workspace back_and_forth
 
-bindsym $mod+w exec --no-startup-id firefox
+bindsym $mod+w exec --no-startup-id chromium
 bindsym $mod+e exec pcmanfm
 bindsym $mod+Shift+m exec --no-startup-id deadbeef
 
@@ -214,3 +214,4 @@ for_window [window_role="conversation"] floating disable, border normal
 for_window [window_role="Msgcompose"] floating disable, border normal
 for_window [window_role="smiley_dialog"] floating disable, border normal
 for_window [class="Anki"] floating enable
+for_window [window_role="pop-up"] floating enable
