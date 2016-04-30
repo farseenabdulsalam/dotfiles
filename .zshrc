@@ -1,2 +1,2 @@
-source .zsh/zshrc
+source /home/farzeen/.zsh/zshrc
 
