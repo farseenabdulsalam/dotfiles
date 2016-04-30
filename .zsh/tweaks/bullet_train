@@ -1,0 +1,5 @@
+BULLETTRAIN_PROMPT_ORDER=(
+  git
+  context
+  dir
+)

@@ -1,12 +1,16 @@
 
+export TERM="xterm-256color"
+
 ZSH_DIR="/home/farzeen/.zsh"
 CACHE_DIR=$ZSH_DIR/cache
 
-ZPLG_HOME=$ZSH_DIR/zplugin
-source $ZSH_DIR/zplugin/bin/zplugin.zsh
-source $ZSH_DIR/zplugin/zplugin-load
+ZGEN_DIR=$ZSH_DIR/cache/zgen
+# ZGEN_INIT=$ZSH_DIR/zgen-init
 
 # source every file in tweaks dir
 for i in $ZSH_DIR/tweaks/*; do
   source $i
 done
+
+source $ZSH_DIR/zgen/zgen.zsh
+source $ZSH_DIR/zgen-init

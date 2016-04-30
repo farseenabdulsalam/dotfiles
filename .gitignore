@@ -10,8 +10,7 @@
 !.zsh
 !.zsh/tweaks
 !.zsh/tweaks/*
-!.zsh/zplugin
-!.zsh/zplugin/zplugin-load
+!.zsh/zgen-init
 !.zsh/zshrc
 
 !.zshrc
