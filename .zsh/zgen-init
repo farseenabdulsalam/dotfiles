@@ -2,7 +2,7 @@
 if ! zgen saved; then
 
   zgen oh-my-zsh
-  zgen load rupa/z
+  # zgen load rupa/z
   zgen load caiogondim/bullet-train-oh-my-zsh-theme bullet-train
   zgen oh-my-zsh plugins/fasd
   zgen oh-my-zsh plugins/git
