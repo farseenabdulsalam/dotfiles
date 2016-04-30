@@ -1,0 +1,4 @@
+alias data='cd /mnt/data'
+alias gallery='cd /mnt/gallery'
+alias apks='cd /mnt/data/Apps/Android'
+
