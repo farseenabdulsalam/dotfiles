@@ -1,0 +1,12 @@
+
+ZSH_DIR="/home/farzeen/.zsh"
+CACHE_DIR=$ZSH_DIR/cache
+
+ZPLG_HOME=$ZSH_DIR/zplugin
+source $ZSH_DIR/zplugin/bin/zplugin.zsh
+source $ZSH_DIR/zplugin/zplugin-load
+
+# source every file in tweaks dir
+for i in $ZSH_DIR/tweaks/*; do
+  source $i
+done

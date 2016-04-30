@@ -7,6 +7,13 @@
 !.vim/autoload
 !.vim/autoload/plug.vim
 
+!.zsh
+!.zsh/tweaks
+!.zsh/tweaks/*
+!.zsh/zplugin
+!.zsh/zplugin/zplugin-load
+!.zsh/zshrc
+
 !.zshrc
 !.zshenv
 

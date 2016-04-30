@@ -1,0 +1,7 @@
+
+# Home, end-key fix
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+# Ctrl+ left/right
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word

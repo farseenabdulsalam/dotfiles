@@ -1,0 +1,10 @@
+
+autoload -U compinit
+compinit
+zstyle ':completion:*' menu select
+#zstyle ':completion:*' list-rows-first yes
+#zstyle ':completion:*' max-matches-width 10
+setopt menu_complete
+setopt listrowsfirst
+
+export fpath=("/usr/share/zsh/site-functions/" $fpath)
