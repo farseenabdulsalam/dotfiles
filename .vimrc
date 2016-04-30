@@ -44,7 +44,7 @@ call plug#begin()
     Plug 'bling/vim-airline'
     " Plug 'ervandew/supertab'
     Plug 'majutsushi/tagbar'
-    Plug 'moll/vim-bbye'
+    Plug 'moll/vim-bbye' " :Bdelete
     " Plug 'Valloric/YouCompleteMe'
     " Plug 'scrooloose/syntastic'
     " Plug 'SirVer/ultisnips'
