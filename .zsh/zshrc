@@ -7,10 +7,11 @@ CACHE_DIR=$ZSH_DIR/cache
 ZGEN_DIR=$ZSH_DIR/cache/zgen
 # ZGEN_INIT=$ZSH_DIR/zgen-init
 
+source $ZSH_DIR/zgen/zgen.zsh
+source $ZSH_DIR/zgen-init
+
 # source every file in tweaks dir
 for i in $ZSH_DIR/tweaks/*; do
   source $i
 done
 
-source $ZSH_DIR/zgen/zgen.zsh
-source $ZSH_DIR/zgen-init
