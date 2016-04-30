@@ -5,7 +5,10 @@ if ! zgen saved; then
   zgen load rupa/z
   zgen load caiogondim/bullet-train-oh-my-zsh-theme bullet-train
   zgen oh-my-zsh plugins/fasd
-  zgen oh-my-zsh plugins/git 
+  zgen oh-my-zsh plugins/git
+  zgen oh-my-zsh plugins/gitfast
+  zgen load ascii-soup/zsh-url-highlighter
+  zgen load djui/alias-tips
 
   # generate the init script from plugins above
   zgen save
