@@ -1,0 +1,11 @@
+#Pacman and yaourt aliases
+
+alias ys='yaourt -Ss'
+alias yS='yaourt --noconfirm -S'
+alias ySc='yaourt -S'
+
+
+alias pcs='pacman -Ss'
+alias pcS='sudo pacman --noconfirm -S'
+alias pq='pacman -Qs'
+alias pqi='pacman -Qi'
