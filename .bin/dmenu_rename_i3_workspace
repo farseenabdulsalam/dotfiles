@@ -17,6 +17,10 @@ i3 = i3ipc.Connection()
 w = i3.get_tree().find_focused().workspace()
 name = str(w.name)
 index = int(re.findall('[0-9]+', name)[0])
-print('rename workspace "%s" to "%d: %s"' % (name, index, stdout))
+if len(stdout)>0:
+    payload='rename workspace "%s" to "%d: %s"' % (name, index, stdout)
+else:
+    payload='rename workspace "%s" to "%d"' % (name,index)
+
 i3.message(message_type=i3ipc.MessageType.COMMAND,
-           payload='rename workspace "%s" to "%d: %s"' % (name, index, stdout))
+           payload=payload)
