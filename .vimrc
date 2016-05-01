@@ -4,50 +4,28 @@
 " ------------
 " {{
 call plug#begin()
-    " Plug 'Rip-Rip/clang_complete'
-    " Plug 'tpope/vim-commentary'
     Plug 'PotatoesMaster/i3-vim-syntax'
     Plug 'gioele/vim-autoswap'
     Plug 'tomtom/tcomment_vim'
-    Plug 'davidhalter/jedi-vim'
-    " Plug 'tpope/vim-abolish'
-
-    Plug 'tpope/vim-repeat'
-
+    " Plug 'davidhalter/jedi-vim'
     Plug 'tpope/vim-surround'
-
-    " Plug 'terryma/vim-expand-region'
-
-    " Plug 'sheerun/vim-polyglot'
     Plug 'mhinz/vim-startify'
-
     Plug 'scrooloose/nerdtree'
-    " Plug 'scrooloose/nerdcommenter'
-    " Plug 'wikitopian/hardmode'
-
     Plug 'airblade/vim-rooter'
     Plug 'LucHermitte/lh-vim-lib'
     Plug 'LucHermitte/local_vimrc'
-
-    " Plug 'mbbill/undotree'
-
     Plug 'kien/ctrlp.vim'
-    "Plug 'altercation/vim-colors-solarized'
     Plug 'bronson/vim-trailing-whitespace'
-
     Plug '4Evergreen4/vim-hardy' " -- Arduino integration
-
-    "Plug 'Lokaltog/vim-distinguished'
     Plug 'nanotech/jellybeans.vim'
-    "Plug 'zeis/vim-kolor'
-    "Plug 'junegunn/seoul256.vim'
     Plug 'bling/vim-airline'
-    " Plug 'ervandew/supertab'
     Plug 'majutsushi/tagbar'
     Plug 'moll/vim-bbye' " :Bdelete
-    " Plug 'Valloric/YouCompleteMe'
-    " Plug 'scrooloose/syntastic'
-    " Plug 'SirVer/ultisnips'
+    Plug 'Valloric/YouCompleteMe'
+    Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
+    " Plug 'nvie/vim-flake8', { 'for': 'python' }
+    Plug 'scrooloose/syntastic'
+
 call plug#end()
 " }} End of My Plugins
 
@@ -294,4 +272,22 @@ call plug#end()
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
 
-command AutoSplit :rightb wincmd v|:wincmd l| :rightb wincmd s | :wincmd h
+" Auto remove whitespaces
+autocmd BufWritePre * :%s/\s\+$//e
+
+command! AutoSplit :rightb wincmd v|:wincmd l| :rightb wincmd s | :wincmd h
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+nnoremap <leader>x :lnext<CR>
+nnoremap <leader>X :lprevious<CR>
+nnoremap <leader>, :%s/,\(\S\)/, \1/g<CR>
+" python comma style fix
