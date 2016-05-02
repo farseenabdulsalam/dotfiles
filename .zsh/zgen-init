@@ -7,6 +7,7 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/fasd
   zgen oh-my-zsh plugins/git
   zgen oh-my-zsh plugins/gitfast
+  zgen oh-my-zsh plugins/colored-man-pages
   zgen load ascii-soup/zsh-url-highlighter
   zgen load djui/alias-tips
 
