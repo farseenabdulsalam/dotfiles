@@ -1,5 +1,4 @@
-"TODO : Figure out block indenting
-"
+
 "  My Plugins
 " ------------
 " {{
@@ -23,6 +22,7 @@ call plug#begin()
     Plug 'moll/vim-bbye' " :Bdelete
     Plug 'Valloric/YouCompleteMe'
     Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
+    Plug 'dbsr/vimpy', { 'for': 'python' } " import fixer
     " Plug 'nvie/vim-flake8', { 'for': 'python' }
     " Plug 'scrooloose/syntastic'
 
@@ -291,3 +291,5 @@ nnoremap <leader>x :lnext<CR>
 nnoremap <leader>X :lprevious<CR>
 nnoremap <leader>, :%s/,\(\S\)/, \1/g<CR>
 " python comma style fix
+nnoremap <leader>i :VimpyCheckLine
+" TODO: Figure out how to make the above shortcut python only
