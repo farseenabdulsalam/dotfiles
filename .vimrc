@@ -24,7 +24,7 @@ call plug#begin()
     Plug 'Valloric/YouCompleteMe'
     Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
     " Plug 'nvie/vim-flake8', { 'for': 'python' }
-    Plug 'scrooloose/syntastic'
+    " Plug 'scrooloose/syntastic'
 
 call plug#end()
 " }} End of My Plugins
