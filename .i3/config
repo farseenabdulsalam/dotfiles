@@ -195,6 +195,8 @@ bindsym $mod+w exec --no-startup-id chromium
 bindsym $mod+e exec pcmanfm
 bindsym $mod+Shift+m exec --no-startup-id deadbeef
 
+bindsym $mod+Tab exec --no-startup-id /home/farzeen/.bin/snippy
+
 font pango: Roboto Sans 7
 exec --no-startup-id compton
 exec --no-startup-id nm-applet
