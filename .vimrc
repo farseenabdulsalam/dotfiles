@@ -22,7 +22,7 @@ call plug#begin()
     Plug 'moll/vim-bbye' " :Bdelete
     Plug 'Valloric/YouCompleteMe'
     Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
-    Plug 'dbsr/vimpy', { 'for': 'python' } " import fixer
+    " Plug 'dbsr/vimpy', { 'for': 'python' } " import fixer
     " Plug 'nvie/vim-flake8', { 'for': 'python' }
     " Plug 'scrooloose/syntastic'
 
