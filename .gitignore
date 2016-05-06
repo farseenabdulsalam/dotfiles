@@ -39,4 +39,7 @@
 
 !.wgetrc
 
+!.snippy
+!.snippy/*
+
 *.swp
