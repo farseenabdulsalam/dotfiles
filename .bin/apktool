@@ -1,2 +1,0 @@
-#!/bin/bash
-java -jar ~/.bin/apktool_2.0.3.jar $@
