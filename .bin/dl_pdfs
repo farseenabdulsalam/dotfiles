@@ -1,2 +1,39 @@
-#!/bin/bash
- wget -q -O - "$1" |grep -E -o "http://[^ ]+.pdf" |wget -i - -nc -nv --show-progress
+#!/bin/python
+
+import re
+import requests
+import sys
+import subprocess
+
+# site_url is the one and only argument
+site_url = sys.argv[1]
+
+#The [0][0] is to select the first paranthesis itself, inside the first paranthesis
+base_url = re.findall(r'(https?://[^ ]+?(/|$))',site_url)[0][0]
+parent_dir_url = re.findall(r'(https?://[^ ]+\/)',site_url)[0]
+
+# get the response
+resp = requests.get(site_url)
+
+# get all matching href's ending with .pdf
+pdf_links_match = re.findall(r"href=(['\"])([^ ]*?\.pdf)\1",resp.text)
+
+urls=set()
+for match in pdf_links_match:
+    # [1] is to select contents of second paranthesis
+    url = match[1]
+    # if the url is a full url
+    if re.match(r"(https?|ftps?)://",url) is not None:
+        urls.add(url)
+    # if the url is relative to the base url
+    elif url.startswith(r'/'):
+        # url[1:] strips leading slash
+        urls.add(base_url+url[1:])
+    else:
+        urls.add(parent_dir_url+url)
+
+file_list = open('.dl_pdf','w')
+file_list.writelines([url+'\n' for url in urls])
+file_list.close()
+subprocess.call(['aria2c','-i','.dl_pdf'])
+
