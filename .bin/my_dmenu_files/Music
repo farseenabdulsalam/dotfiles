@@ -2,8 +2,8 @@
 DMENU="dmenu"
 DMENU_OPTS=($@)
 
-MUSIC_PLAYER="deadbeef"
-MUSIC_PLAYER_OPTS="--queue"
+MUSIC_PLAYER="audacious"
+MUSIC_PLAYER_OPTS=""
 
 
 MUSIC_DIR=(~/Music/ ~/MyDownloaders/MidQMusic /mnt/gallery/MyDownloaders/MidQMusic /mnt/gallery/Music /mnt/gallery/Unsorted\ Music)
@@ -23,7 +23,7 @@ fi
 
 TO_OPEN=$($DMENU ${DMENU_OPTS[@]} -i -p "Open music" -l 10 <<<"${MUSICS[*]}")
 
-echo $TO_OPEN 
+echo $TO_OPEN
 echo
 echo ${TO_OPEN[@]}
 if [ -z "${TO_OPEN[@]}" ]; then exit 4; fi
