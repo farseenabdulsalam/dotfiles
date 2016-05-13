@@ -1,2 +1,3 @@
 path+=(~/.bin/)
+path+=(~/.bin_cache/)
 export PATH
