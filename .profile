@@ -1,1 +1,1 @@
-export PATH=$PATH:/home/farzeen/.bin:$(ruby -e "print Gem.user_dir")/bin
+export PATH=$PATH:/home/farzeen/.bin:/home/farzeen/.bin_cache/:$(ruby -e "print Gem.user_dir")/bin
