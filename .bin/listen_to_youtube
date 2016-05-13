@@ -1,0 +1,8 @@
+#!/bin/bash
+
+format="250/249/140"
+url="$1"
+
+youtube-dl -f "$format" -o - "$url"|audacious -
+
+
