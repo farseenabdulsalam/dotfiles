@@ -218,7 +218,8 @@ exec --no-startup-id mount_all
 exec --no-startup-id nitrogen --restore
 # Special effects like shadows, transparency etc
 exec --no-startup-id compton
-
+# Chrome shellac SVC
+exec --no-startup-id shellac_svc
 
 # Auto-float settings
 # Some windows are shown like in a conventional window manager to prevent
