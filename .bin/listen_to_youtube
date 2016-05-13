@@ -1,8 +1,7 @@
 #!/bin/bash
-
 format="250/249/140"
 url="$1"
-
+echo "$url">/home/farzeen/lyt.log
 youtube-dl -f "$format" -o - "$url"|audacious -
 
 
