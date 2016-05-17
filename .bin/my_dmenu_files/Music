@@ -6,7 +6,7 @@ MUSIC_PLAYER="audacious"
 MUSIC_PLAYER_OPTS=""
 
 
-MUSIC_DIR=(~/Music/ ~/MyDownloaders/MidQMusic /mnt/gallery/MyDownloaders/MidQMusic /mnt/gallery/Music /mnt/gallery/Unsorted\ Music)
+MUSIC_DIR=(/mnt/gallery/Audio/Music)
 
 if [ ! -d $MUSIC_DIR ]; then
   $DMENU ${DMENU_OPTS[@]} -p "Directory cannot be accessed: $MUSIC_DIR" <&-
