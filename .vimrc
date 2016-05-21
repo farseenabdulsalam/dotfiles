@@ -6,9 +6,9 @@ call plug#begin()
     Plug 'PotatoesMaster/i3-vim-syntax'
     Plug 'gioele/vim-autoswap'
     Plug 'tomtom/tcomment_vim'
-    " Plug 'davidhalter/jedi-vim'
     Plug 'tpope/vim-surround'
     Plug 'mhinz/vim-startify'
+
     Plug 'scrooloose/nerdtree'
     Plug 'airblade/vim-rooter'
     Plug 'LucHermitte/lh-vim-lib'
@@ -22,10 +22,7 @@ call plug#begin()
     Plug 'moll/vim-bbye' " :Bdelete
     Plug 'Valloric/YouCompleteMe'
     Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
-    " Plug 'dbsr/vimpy', { 'for': 'python' } " import fixer
-    " Plug 'nvie/vim-flake8', { 'for': 'python' }
-    " Plug 'scrooloose/syntastic'
-
+    Plug 'mattn/emmet-vim', { 'for': 'html' }
 call plug#end()
 " }} End of My Plugins
 
