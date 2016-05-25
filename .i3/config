@@ -220,6 +220,8 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id compton
 # Chrome shellac SVC
 exec --no-startup-id shellac_svc
+# Telegram
+exec --no-startup-id telegram-desktop -startintray
 
 # Auto-float settings
 # Some windows are shown like in a conventional window manager to prevent
