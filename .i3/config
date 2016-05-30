@@ -214,14 +214,14 @@ exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 # A script to mount all my drives
 exec --no-startup-id mount_all
-# Restore wallpapers
-exec --no-startup-id nitrogen --restore
 # Special effects like shadows, transparency etc
 exec --no-startup-id compton
 # Chrome shellac SVC
 exec --no-startup-id shellac_svc
 # Telegram
 exec --no-startup-id telegram-desktop -startintray
+# Restore wallpapers
+exec --no-startup-id nitrogen --restore
 
 # Auto-float settings
 # Some windows are shown like in a conventional window manager to prevent
