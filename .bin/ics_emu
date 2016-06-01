@@ -8,4 +8,4 @@ else
   rm /home/farzeen/.android/avd/ICS_86.avd/*.lock
 fi
 # Run my Android ICS device on emulator
-/home/farzeen/programs/android-sdk-linux/tools/emulator @ICS_86 -no-boot-anim
+/home/farzeen/Apps/android-sdk-linux/tools/emulator @ICS_86 -no-boot-anim
