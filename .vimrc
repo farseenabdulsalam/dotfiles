@@ -14,7 +14,7 @@ call plug#begin()
     Plug 'LucHermitte/lh-vim-lib'
     Plug 'LucHermitte/local_vimrc'
     Plug 'kien/ctrlp.vim'
-    Plug 'bronson/vim-trailing-whitespace'
+    " Plug 'bronson/vim-trailing-whitespace'
     Plug '4Evergreen4/vim-hardy' " -- Arduino integration
     Plug 'nanotech/jellybeans.vim'
     Plug 'bling/vim-airline'
@@ -263,6 +263,12 @@ call plug#end()
 
     " Close preview window
     nnoremap <Leader>pc :pclose<CR>
+
+    " Search for expression containing slash
+    " Define a new command Ss.
+    command! -nargs=1 Ss let @/ = <q-args>
+    " Map <Leader><slash> to the above command
+    nnoremap <Leader>/ :Ss
 " }}
 " ENDOF My shortcuts
 
