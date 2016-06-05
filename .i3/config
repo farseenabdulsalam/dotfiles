@@ -208,20 +208,20 @@ bindsym Shift+XF86PowerOff exec gksudo pm-suspend
 
 
 ## Auto-start apps
+# Restore wallpapers
+exec --no-startup-id nitrogen --restore
 # Network manager systray
 exec --no-startup-id nm-applet
 # Bluetooth systray
-exec --no-startup-id blueman-applet
+# exec --no-startup-id blueman-applet
 # A script to mount all my drives
-exec --no-startup-id mount_all
+# exec --no-startup-id mount_all
 # Special effects like shadows, transparency etc
 exec --no-startup-id compton
 # Chrome shellac SVC
-exec --no-startup-id shellac_svc
+# exec --no-startup-id shellac_svc
 # Telegram
-exec --no-startup-id telegram-desktop -startintray
-# Restore wallpapers
-exec --no-startup-id nitrogen --restore
+# exec --no-startup-id telegram-desktop -startintray
 
 # Auto-float settings
 # Some windows are shown like in a conventional window manager to prevent
