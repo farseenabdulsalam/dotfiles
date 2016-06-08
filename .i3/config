@@ -215,9 +215,9 @@ exec --no-startup-id nm-applet
 # Bluetooth systray
 # exec --no-startup-id blueman-applet
 # A script to mount all my drives
-# exec --no-startup-id mount_all
+exec --no-startup-id mount_all
 # Special effects like shadows, transparency etc
-exec --no-startup-id compton
+# exec --no-startup-id compton
 # Chrome shellac SVC
 # exec --no-startup-id shellac_svc
 # Telegram
