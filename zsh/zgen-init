@@ -5,7 +5,6 @@ if ! zgen saved; then
   # zgen load rupa/z
   zgen load caiogondim/bullet-train-oh-my-zsh-theme bullet-train
   zgen oh-my-zsh plugins/fasd
-  zgen oh-my-zsh plugins/dircolors
   zgen oh-my-zsh plugins/git
   zgen oh-my-zsh plugins/gitfast
   zgen oh-my-zsh plugins/colored-man-pages
