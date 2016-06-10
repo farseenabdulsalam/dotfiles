@@ -1,1 +1,2 @@
+eval $(dircolors -b)
 alias ls='ls --group-directories-first --color'
