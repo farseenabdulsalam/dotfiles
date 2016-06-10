@@ -4,6 +4,7 @@
 # If not running interactively, don't do anything
 # export PATH=$PATH:/home/farzeen/.bin
 source "$DOTDIR/environment_vars"
+export HISTFILE="$DOTDIR/bash/.bash_history"
 
 [[ $- != *i* ]] && return
 
