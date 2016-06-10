@@ -1,9 +1,0 @@
-
-device="$1"
-iso="$2"
-bsin=8M
-bsout=8M
-sizeof="$device"
-if [ "$3" = "destsize" ]; then sizeof="$iso"; fi
-dd if="$device" bs=$bsin|pv -prbas `blockdev --getsize64 "$sizeof"`|dd of="$iso" bs=$bsout
-

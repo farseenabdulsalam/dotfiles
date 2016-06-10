@@ -1,2 +1,0 @@
-#!/bin/bash
-dmenu -fn "Droid Sans Mono-8" -p "Password:" -nb \#441505 -nf \#441505  <&-

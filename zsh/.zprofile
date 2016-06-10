@@ -1,0 +1,1 @@
+source "$DOTDIR/zsh/.zshrc"

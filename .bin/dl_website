@@ -1,3 +1,0 @@
-#!/bin/bash
-# Stolen from here: https://www.quora.com/What-are-some-useful-skills-I-can-learn-in-minutes/answers/7862881
-wget  --random-wait  -r  -p  -e  robots=off  -U  mozilla  "$1"

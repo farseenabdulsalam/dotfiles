@@ -1,0 +1,8 @@
+
+
+###
+# This file is supposed to contain file names to be symlinked to home in
+# the following format:
+#     "/abs/path/to/source.file" "/abs/path/to/symlink_in_home"
+
+$DOTDIR/zsh/.zshrc $MY_HOME/.zshrc

@@ -1,4 +1,0 @@
-#!/bin/bash
-
-# Terminal Here
-gnome-terminal `pwd` >/dev/null 2>&1

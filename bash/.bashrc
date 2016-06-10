@@ -1,0 +1,45 @@
+#
+# ~/.bashrc
+#
+# If not running interactively, don't do anything
+# export PATH=$PATH:/home/farzeen/.bin
+source "$DOTDIR/environment_vars"
+
+[[ $- != *i* ]] && return
+
+dd2() {
+    size=$(stat -c%s $1)
+    dd if=$1 &> /dev/null | pv -petrb -s $size | dd of=$2
+}
+alias grep='grep --color=auto'
+alias ls='ls --color=auto'
+eval $(dircolors -b)
+alias mkdir='mkdir -p -v'
+alias mv=' timeout 8 mv -iv'
+alias rm=' timeout 3 rm -Iv --one-file-system'
+PS1='[\u@\h \W]\$ '
+
+#return value visualisation
+PS1="\[\033[01;37m\]\$? \$(if [[ \$? == 0 ]]; then echo \"\[\033[01;32m\]\342\234\223\"; else echo \"\[\033[01;31m\]\342\234\227\"; fi) $(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h'; else echo '\[\033[01;32m\]\u@\h'; fi)\[\033[01;34m\] \w \$\[\033[00m\] "
+
+#colorful man
+man() {
+    env LESS_TERMCAP_mb=$'\E[01;31m' \
+    LESS_TERMCAP_md=$'\E[01;38;5;74m' \
+    LESS_TERMCAP_me=$'\E[0m' \
+    LESS_TERMCAP_se=$'\E[0m' \
+    LESS_TERMCAP_so=$'\E[38;5;246m' \
+    LESS_TERMCAP_ue=$'\E[0m' \
+    LESS_TERMCAP_us=$'\E[04;38;5;146m' \
+    man "$@"
+}
+gh() {
+    env LESS_TERMCAP_mb=$'\E[01;31m' \
+    LESS_TERMCAP_md=$'\E[01;38;5;74m' \
+    LESS_TERMCAP_me=$'\E[0m' \
+    LESS_TERMCAP_se=$'\E[0m' \
+    LESS_TERMCAP_so=$'\E[38;5;246m' \
+    LESS_TERMCAP_ue=$'\E[0m' \
+    LESS_TERMCAP_us=$'\E[04;38;5;146m' \
+    git help "$@"
+}

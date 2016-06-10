@@ -1,0 +1,16 @@
+# vim: set ft=sh:
+
+
+export DOTDIR="$HOME/.dotfiles"
+
+export PATH=$PATH:"$HOME/.bin"
+export PATH=$PATH:"$HOME/.bin_cache"
+export PATH=$PATH:$(ruby -e "print Gem.user_dir")/bin
+
+export XDG_CONFIG_HOME="$HOME/.config"
+
+
+export GIMP2_DIRECTORY="$XDG_CONFIG_HOME"/gimp
+export ANDROID_SDK_HOME="$XDG_CONFIG_HOME/AndroidSDK"
+# Set vimrc's location and source it on vim startup
+export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'

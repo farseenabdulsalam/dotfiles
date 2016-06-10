@@ -1,4 +1,0 @@
-#!/bin/bash
-cd /home/farzeen/websites
-sudo python -m http.server 80
-

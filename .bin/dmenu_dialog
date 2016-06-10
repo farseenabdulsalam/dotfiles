@@ -1,8 +1,0 @@
-#!/bin/bash
-
-prompt="$1"
-shift;
-res=$(echo -e "Yes\nNo"|dmenu -i -p "$prompt" "$@")
-exit $( [[ $res == [Yy]* ]] );
-
-
