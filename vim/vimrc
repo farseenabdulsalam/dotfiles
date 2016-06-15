@@ -11,12 +11,13 @@ let $MYVIMRC="$DOTDIR/vim/vimrc"
 " ------------
 " {{
 call plug#begin()
+    Plug 'davidhalter/jedi-vim'
     Plug 'PotatoesMaster/i3-vim-syntax'
     Plug 'gioele/vim-autoswap'
     Plug 'tomtom/tcomment_vim'
     Plug 'tpope/vim-surround'
     Plug 'mhinz/vim-startify'
-
+    Plug 'craigemery/vim-autotag' " Auto create CTags
     Plug 'scrooloose/nerdtree'
     Plug 'airblade/vim-rooter'
     Plug 'LucHermitte/lh-vim-lib'
@@ -84,7 +85,7 @@ call plug#end()
         inoremap <expr> <C-k> pumvisible() ? '<C-p>' : 'k'
     " }}
 
-
+    let g:jedi#completions_enabled = 0 " Stop YCM and Jedi-Vim from conflicting
     " Clang_complete options
     " {{
 
@@ -188,8 +189,12 @@ call plug#end()
     " nnoremap <Down> <NOP>
     " nnoremap <Left> <NOP>
     " nnoremap <Right> <NOP>
-    nnoremap <C-j> <PageDown>
-    nnoremap <C-k> <PageUp>
+
+    " PageUp - Page Down
+    " nnoremap <C-j> <PageDown>
+    " nnoremap <C-k> <PageUp>
+    " nnoremap <C-Down> <PageDown>
+    " nnoremap <C-Up> <PageUp>
     " Ctrl+hjkl -> movement in insert mode
     inoremap <C-h> <Left>
     inoremap <C-j> <Down>
@@ -203,24 +208,45 @@ call plug#end()
     nnoremap <leader>wk     :lefta wincmd s<CR>
     nnoremap <leader>wl     :rightb wincmd v<CR>
     nnoremap <leader>wj     :rightb wincmd s<CR>
+    " Arrow counter parts
+    nnoremap <leader>w<Left>   :lefta wincmd v<CR>
+    nnoremap <leader>w<Up>     :lefta wincmd s<CR>
+    nnoremap <leader>w<Right>  :rightb wincmd v<CR>
+    nnoremap <leader>w<Down>   :rightb wincmd s<CR>
 
     " <Leader> <Dir> to move to that window
     nnoremap <silent> <leader>k :wincmd k<CR>
     nnoremap <silent> <leader>j :wincmd j<CR>
     nnoremap <silent> <leader>h :wincmd h<CR>
     nnoremap <silent> <leader>l :wincmd l<CR>
+    " Arrow counterparts
+    nnoremap <silent> <leader><Up> :wincmd k<CR>
+    nnoremap <silent> <leader><Down> :wincmd j<CR>
+    nnoremap <silent> <leader><Left> :wincmd h<CR>
+    nnoremap <silent> <leader><Right> :wincmd l<CR>
+    " Arrow counterpart 2
+    nnoremap <silent> <C-Up> :wincmd k<CR>
+    nnoremap <silent> <C-Down> :wincmd j<CR>
+    nnoremap <silent> <C-Left> :wincmd h<CR>
+    nnoremap <silent> <C-Right> :wincmd l<CR>
 
     " close window <leader> wc
     nnoremap <leader>wc :wincmd q<cr>
     " rotate window <leader> wr
     nnoremap <leader>wr <C-W>r
 
-    " <leader> wr <direction> resize window
-    nnoremap <leader>wrh  :3wincmd <<cr>
-    nnoremap <leader>wrl :3wincmd ><cr>
-    nnoremap <leader>wrk    :3wincmd +<cr>
-    nnoremap <leader>wrj  :4wincmd -<cr>
+  " <leader> wr <direction> resize window
+  nnoremap <leader>wrh  :3wincmd <<cr>
+  nnoremap <leader>wrl :3wincmd ><cr>
+  nnoremap <leader>wrk    :3wincmd +<cr>
+  nnoremap <leader>wrj  :4wincmd -<cr>
 
+  " <leader> wr <direction> resize window
+    nnoremap <C-A-Left>  :3wincmd <<cr>
+    nnoremap <C-A-Right> :3wincmd ><cr>
+    nnoremap <C-A-Up>    :3wincmd +<cr>
+    nnoremap <C-A-Down>  :3wincmd -<cr>
+    "
     " Quick toggle relative/abs numbering
     " <leader>*2 n
     nnoremap <leader><leader>n :set relativenumber!<cr>
@@ -229,8 +255,10 @@ call plug#end()
     " <leader> bc -> close buffer
     nnoremap <leader>bc :Bdelete<cr>
     " <leader><dir> -> move to that buffer
-    nnoremap <C-l> :bnext!<cr>
-    nnoremap <C-h> :bprevious!<cr>
+    nnoremap <C-k> :bnext!<cr>
+    nnoremap <C-j> :bprevious!<cr>
+    nnoremap <C-S-Right> :bnext!<cr>
+    nnoremap <C-S-Left> :bprevious!<cr>
 
     " Window maximize toggle
     " <leader> wm
