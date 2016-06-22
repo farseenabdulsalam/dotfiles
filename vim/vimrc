@@ -315,7 +315,7 @@ let g:ycm_global_ycm_extra_conf="$DOTDIR/vim/ycm_extra_conf.py"
 cmap w!! w !sudo tee > /dev/null %
 
 " Auto remove whitespaces
-autocmd BufWritePre * :%s/\s\+$//e
+" autocmd BufWritePre * :%s/\s\+$//e
 
 command! AutoSplit :rightb wincmd v|:wincmd l| :rightb wincmd s | :wincmd h
 
