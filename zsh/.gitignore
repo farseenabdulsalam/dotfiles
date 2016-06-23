@@ -1,4 +1,6 @@
 .zsh_history
 cache
 .zcompdump*
+.zcompcache
 zim
+
