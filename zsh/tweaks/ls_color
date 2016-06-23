@@ -1,2 +1,2 @@
-eval $(dircolors -b)
+eval $(dircolors -b "$DOTDIR/dircolors")
 alias ls='ls --group-directories-first --color'
