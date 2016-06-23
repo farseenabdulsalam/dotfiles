@@ -1,0 +1,10 @@
+alias _='sudo'
+
+quick-sudo () {
+  if [[ $#BUFFER -eq 0 ]]; then
+    BUFFER="_ !!"
+    zle accept-and-hold
+  fi
+}
+zle -N quick-sudo
+bindkey '^X' quick-sudo
