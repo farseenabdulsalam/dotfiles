@@ -13,7 +13,8 @@ source $ZDOTDIR/zim/init.zsh
 
 # source every file in tweaks dir
 
-if [[ ! -f $ZDOTDIR/cache/tweaks_cache ]]; then
+if [[ $ZDOTDIR/tweaks -nt $ZDOTDIR/cache/tweaks_cache ]]; then
+  rm $ZDOTDIR/cache/tweaks_cache
   for i in $ZDOTDIR/tweaks/*; do
     cat "$i" >>! $ZDOTDIR/cache/tweaks_cache
   done
