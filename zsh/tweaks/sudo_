@@ -2,8 +2,8 @@ alias _='sudo'
 
 quick-sudo () {
   if [[ $#BUFFER -eq 0 ]]; then
-    BUFFER="_ !!"
-    zle accept-and-hold
+    BUFFER="sudo !!"
+    zle .accept-line
   fi
 }
 zle -N quick-sudo
