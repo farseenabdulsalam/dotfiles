@@ -5,4 +5,6 @@
 # the following format:
 #     "/abs/path/to/source.file" "/abs/path/to/symlink_in_home"
 
-$DOTDIR/zsh/.zshrc $MY_HOME/.zshrc
+$DOTDIR/zsh/zshrc $HOME/.zshrc
+$DOTDIR/zsh/zprofile $HOME/.zprofile
+$DOTDIR/environment_vars $HOME/.profile
